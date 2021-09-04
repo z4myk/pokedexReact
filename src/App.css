@@ -1,38 +1,55 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+.botonEnviar{
+  margin-left: 340px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.pokeApiPhoto{
+ width: 100px;
+ position: absolute;
+ bottom: -20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.pokemonphoto{
+  margin-left: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.redondelPokemon{
+  width: 5px;
+  background-color: rgb(248, 44, 44);
+  border-radius: 100px;
+ 
+}
+
+.cardbody{
+  width: 200px;
+  height: 280px;
+  padding: 30px;
+  margin-top: 30px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 5px 5px 5px 5px rgb(182, 182, 182);
+  border: 1px solid red;
+  cursor: pointer;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+
+.cardbody:hover{
+  background-color: rgb(248, 44, 44);
   color: white;
+  
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cardbodySearch{
+  width: 500px;
+  height: 300px;
+  padding: 30px;
+  margin-top: 30px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 5px 5px 5px 5px rgb(182, 182, 182);
+  border: 1px solid red;
+  cursor: pointer;
+  font-family: 'Ubuntu', sans-serif;
+  
 }
