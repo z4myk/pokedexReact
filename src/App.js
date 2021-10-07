@@ -2,7 +2,6 @@ import "./App.css";
 import { React, useState } from "react";
 import "animate.css";
 import { Search } from "./components/Search";
-import { CardPokemon } from "./components/CardPokemon";
 import { Navbar } from "./components/Navbar";
 import { Pokedex } from "./components/Pokedex";
 import { Footer } from "./components/Footer";
@@ -14,20 +13,27 @@ function App() {
     "https://pokeapi.co/api/v2/pokemon/?limit=40"
   );
   const [allPokemons, setAllPokemons] = useState([]);
-
   const [searchData, setSearchData] = useState("");
   const [pokemon, setPokemon] = useState("");
-
+ const [loading, setLoading] = useState(false);
   
   const getPokemonBySearch = async () => {
     const url = `https://pokeapi.co/api/v2/pokemon/${searchData}`;
     try {
       const respuesta = await fetch(url);
-      const data = await respuesta.json();
-      setPokemon(data);
+      if(respuesta.status === 200){
+        const data = await respuesta.json();
+        setPokemon(data);
+      }
+      else if(respuesta.status === 404){
+        setLoading(true)
+        setTimeout(() => {
+          setLoading(false)
+        }, 1500)
+
+      }
     } catch (err) {
       console.log(err);
-      
     }
   };
 
@@ -35,9 +41,8 @@ function App() {
   const getPokedex = async () => {
     const response = await fetch(loadMore);
     const data = await response.json();
-
     setLoadMore(data.next);
-
+    
     function createPokemonObject(result) {
       result.forEach(async (pokemon) => {
         const res = await fetch(
@@ -58,13 +63,14 @@ function App() {
       <Navbar />
       <Header />
       <Search
+        loading={loading}
+        setLoading={setLoading}
         getPokemonBySearch={getPokemonBySearch}
         searchData={searchData}
         setSearchData={setSearchData}
         pokemon={pokemon}
         setPokemon={setPokemon}
       />
-      <CardPokemon />
       <h3 className="text-center text-danger my-3">Pokedex</h3>
       <Pokedex
        getPokedex={getPokedex}

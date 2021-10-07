@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
-.botonEnviar{
-  margin-left: 340px;
-}
 
 .pokeApiPhoto{
  width: 100px;
@@ -18,7 +15,6 @@
   width: 5px;
   background-color: rgb(248, 44, 44);
   border-radius: 100px;
- 
 }
 
 .cardbody{
@@ -33,10 +29,11 @@
   font-family: 'Ubuntu', sans-serif;
 }
 
-
 .cardbody:hover{
   background-color: rgb(248, 44, 44);
   color: white;
+  margin-top: 5px;
+  transition-duration: 500ms;
   
 }
 
@@ -57,5 +54,7 @@
 
 .cardbodySearch:hover{
   background-color: rgb(248, 44, 44);
-  color: white;
+  color: white; 
+  transition-duration: 500ms;
+  
 }

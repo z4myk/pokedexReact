@@ -9,8 +9,8 @@ export const Pokedex = (props) => {
 
   return (
     <>
-  
-    <div className="d-flex justify-content-between flex-wrap mb-4">
+
+    <div className="d-flex justify-content-between flex-wrap mb-4 container">
       {props.allPokemons.map((pokedex) => (
         <div key={pokedex.name}>
             <div className="cardbody">
