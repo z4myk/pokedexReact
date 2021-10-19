@@ -71,7 +71,7 @@ function App() {
         pokemon={pokemon}
         setPokemon={setPokemon}
       />
-      <h3 className="text-center text-danger my-3">Pokedex</h3>
+
       <Pokedex
        getPokedex={getPokedex}
        allPokemons={allPokemons}

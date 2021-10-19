@@ -9,11 +9,11 @@ export const Pokedex = (props) => {
 
   return (
     <>
-
+          <h1 className="text-center text-danger my-5 animate__animated animate__fadeInLeftBig titulo">Pokedex</h1>
     <div className="d-flex justify-content-between flex-wrap mb-4 container">
       {props.allPokemons.map((pokedex) => (
         <div key={pokedex.name}>
-            <div className="cardbody">
+            <div className="cardbody animate__animated animate__fadeInLeftBig ">
               <div className="redondelPokemon">
                 <img
                   src={pokedex.sprites.front_default}

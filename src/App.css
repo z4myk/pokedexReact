@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 .pokeApiPhoto{
  width: 100px;
@@ -57,4 +57,12 @@
   color: white; 
   transition-duration: 500ms;
   
+}
+
+.divInput{
+  margin-right: 400px;
+}
+
+.titulo{
+  font-family: 'Bebas Neue', cursive;
 }

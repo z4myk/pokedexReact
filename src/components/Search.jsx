@@ -1,17 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect} from "react";
+import 'animate.css';
 export const Search = (props) => {
-  const [searchData, setSearchData] = useState("");
+ 
 
   const handleInputChange = (e) => {
     props.setSearchData(e.target.value);
   };
 
-  const onClick = (e) => {
-    try {
-      props.getPokemonBySearch();
-    } catch (err) {
-      console.log(err);
+  const onClick = () => {
+    if(props.searchData.length === 0 || props.searchData.trim() === "" ){
+      alert('El campo esta vacio')
+    }else{
+      try {
+        props.getPokemonBySearch(props.searchData);
+      } catch (err) {
+        console.log(err);
+      }
+      
     }
+
+
+
   };
   console.log(props.pokemon);
 
@@ -22,10 +31,11 @@ export const Search = (props) => {
           Ingrese el nombre de un pokemon
         </div>
       ) : null}
+      <div className="container divInput">
       <input
         type="text"
         placeholder="Nombre del pokemon"
-        className="form-control w-100 border-danger mt-5"
+        className="form-control w-100 border-danger mt-5 animate__animated animate__fadeInLeftBig"
         onChange={handleInputChange}
       />
       {props.loading ? (
@@ -34,14 +44,15 @@ export const Search = (props) => {
         </div>
       ) : null}
       <div>
-        <button className="btn btn-success w-100" onClick={onClick}>
+        <button className="btn btn-success w-100 animate__animated animate__fadeInLeftBig" onClick={onClick}>
           Buscar
         </button>
-        <br />
+
       </div>
-      <div className="container ">
+      </div>
+      <div className="container d-flex justify-content-center">
         {props.pokemon && (
-          <div className="cardbodySearch">
+          <div className="cardbodySearch animate__animated animate__fadeInLeftBig ">
             <div className="redondelPokemon">
               <span className="mx-4">#{props.pokemon.id}</span>
               <div className="d-flex">
