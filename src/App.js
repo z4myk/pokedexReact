@@ -5,7 +5,6 @@ import { Search } from "./components/Search";
 import { Navbar } from "./components/Navbar";
 import { Pokedex } from "./components/Pokedex";
 import { Footer } from "./components/Footer";
-import { Header } from "./components/Header";
 
 function App() {
 
@@ -61,7 +60,6 @@ function App() {
   return (
     <>
       <Navbar />
-      <Header />
       <Search
         loading={loading}
         setLoading={setLoading}
@@ -71,11 +69,13 @@ function App() {
         pokemon={pokemon}
         setPokemon={setPokemon}
       />
-
+    <div className="container">
       <Pokedex
        getPokedex={getPokedex}
        allPokemons={allPokemons}
       />
+
+    </div>
       <Footer />
     </>
   );
